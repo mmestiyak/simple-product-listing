@@ -221,10 +221,5 @@ For questions or customization requests:
 - Review the code comments for guidance
 - Ensure all files are properly linked
 
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
----
 
 **Built with ❤️ using vanilla JavaScript, HTML, and CSS** 
