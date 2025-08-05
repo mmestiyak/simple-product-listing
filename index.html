@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product Collection</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-white text-black font-inter">
+  <!-- Header -->
+  <header class="border-b border-black bg-white sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-6 py-8">
+      <h1 class="font-playfair text-3xl font-semibold tracking-wide">SIMPLE</h1>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-6 py-16">
+    <!-- Category Filter -->
+    <div class="mb-16">
+      <div class="mb-12">
+        <h2 class="font-playfair text-4xl font-medium tracking-wide">Browse Products</h2>
+      </div>
+      <select id="categoryFilter" class="font-inter text-sm border-b-2 border-black bg-transparent py-2 px-0 focus:outline-none min-w-[200px]">
+        <option value="all">All Categories</option>
+      </select>
+    </div>
+
+    <!-- Product Grid -->
+    <div id="productGrid" class="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      <!-- Loading Skeleton Cards -->
+      <div class="bg-white border border-black">
+        <div class="skeleton bg-gray-200 w-full h-64"></div>
+        <div class="p-4">
+          <div class="skeleton bg-gray-200 h-4 w-3/4 mb-2"></div>
+          <div class="skeleton bg-gray-200 h-6 w-1/3 mb-2"></div>
+          <div class="skeleton bg-gray-200 h-3 w-1/4"></div>
+        </div>
+      </div>
+      <div class="bg-white border border-black">
+        <div class="skeleton bg-gray-200 w-full h-64"></div>
+        <div class="p-4">
+          <div class="skeleton bg-gray-200 h-4 w-3/4 mb-2"></div>
+          <div class="skeleton bg-gray-200 h-6 w-1/3 mb-2"></div>
+          <div class="skeleton bg-gray-200 h-3 w-1/4"></div>
+        </div>
+      </div>
+      <div class="bg-white border border-black">
+        <div class="skeleton bg-gray-200 w-full h-64"></div>
+        <div class="p-4">
+          <div class="skeleton bg-gray-200 h-4 w-3/4 mb-2"></div>
+          <div class="skeleton bg-gray-200 h-6 w-1/3 mb-2"></div>
+          <div class="skeleton bg-gray-200 h-3 w-1/4"></div>
+        </div>
+      </div>
+      <div class="bg-white border border-black">
+        <div class="skeleton bg-gray-200 w-full h-64"></div>
+        <div class="p-4">
+          <div class="skeleton bg-gray-200 h-4 w-3/4 mb-2"></div>
+          <div class="skeleton bg-gray-200 h-6 w-1/3 mb-2"></div>
+          <div class="skeleton bg-gray-200 h-3 w-1/4"></div>
+        </div>
+      </div>
+      <div class="bg-white border border-black">
+        <div class="skeleton bg-gray-200 w-full h-64"></div>
+        <div class="p-4">
+          <div class="skeleton bg-gray-200 h-4 w-3/4 mb-2"></div>
+          <div class="skeleton bg-gray-200 h-6 w-1/3 mb-2"></div>
+          <div class="skeleton bg-gray-200 h-3 w-1/4"></div>
+        </div>
+      </div>
+      <div class="bg-white border border-black">
+        <div class="skeleton bg-gray-200 w-full h-64"></div>
+        <div class="p-4">
+          <div class="skeleton bg-gray-200 h-4 w-3/4 mb-2"></div>
+          <div class="skeleton bg-gray-200 h-6 w-1/3 mb-2"></div>
+          <div class="skeleton bg-gray-200 h-3 w-1/4"></div>
+        </div>
+      </div>
+      <div class="bg-white border border-black">
+        <div class="skeleton bg-gray-200 w-full h-64"></div>
+        <div class="p-4">
+          <div class="skeleton bg-gray-200 h-4 w-3/4 mb-2"></div>
+          <div class="skeleton bg-gray-200 h-6 w-1/3 mb-2"></div>
+          <div class="skeleton bg-gray-200 h-3 w-1/4"></div>
+        </div>
+      </div>
+      <div class="bg-white border border-black">
+        <div class="skeleton bg-gray-200 w-full h-64"></div>
+        <div class="p-4">
+          <div class="skeleton bg-gray-200 h-4 w-3/4 mb-2"></div>
+          <div class="skeleton bg-gray-200 h-6 w-1/3 mb-2"></div>
+          <div class="skeleton bg-gray-200 h-3 w-1/4"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal -->
+  <div id="productModal" class="fixed inset-0 modal-backdrop flex items-center justify-center hidden z-50 p-6">
+    <div class="bg-white max-w-2xl w-full relative overflow-hidden border border-black">
+      <button onclick="closeModal()" class="absolute top-6 right-6 text-black text-3xl font-light z-10">&times;</button>
+      
+      <div class="grid md:grid-cols-2">
+        <div class="relative">
+          <img id="modalImage" class="w-full h-96 md:h-full object-cover" />
+        </div>
+        
+        <div class="p-8 md:p-12 flex flex-col justify-center">
+          <h2 id="modalTitle" class="font-playfair text-2xl font-medium mb-4 leading-tight"></h2>
+          <p id="modalPrice" class="text-black font-inter text-xl font-medium mb-6"></p>
+          <p id="modalDescription" class="text-black font-inter text-sm leading-relaxed"></p>
+          
+          <div class="mt-8 pt-6 border-t border-black">
+            <button onclick="closeModal()" class="w-full bg-black text-white font-inter text-sm py-3 px-6 tracking-wide">
+              CLOSE
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

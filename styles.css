@@ -1,0 +1,46 @@
+/* Typography */
+.font-playfair { 
+  font-family: 'Playfair Display', serif; 
+}
+
+.font-inter { 
+  font-family: 'Inter', sans-serif; 
+}
+
+/* Modal Backdrop */
+.modal-backdrop {
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Loading Skeleton Animation */
+.skeleton {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+}
+
+/* Custom Scrollbar */
+.elegant-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.elegant-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.elegant-scrollbar::-webkit-scrollbar-thumb {
+  background: #000;
+  border-radius: 3px;
+}
+
+.elegant-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #333;
+} 
